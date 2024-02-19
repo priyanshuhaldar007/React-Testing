@@ -13,13 +13,14 @@ describe('Greet', () => {
         const textElement = screen.getByText('Hello');
         expect(textElement).toBeInTheDocument();
     })
-})
-describe('Greet 2', () => {
-    test('renders with name', () => {
-        const name = 'vishwas'
-        render(<Greet name={name} />);
-        const textElement = screen.getByText(`Hello ${name}`);
-        expect(textElement).toBeInTheDocument();
-    })
 
+    describe('Nested', () => {
+        test('renders with name', () => {
+            const name = 'vishwas'
+            render(<Greet name={name} />);
+            const textElement = screen.getByText(`Hello ${name}`);
+            expect(textElement).toBeInTheDocument();
+        })
+
+    })
 })
